@@ -330,6 +330,10 @@ NifSkope::NifSkope()
     connect(options, &SettingsDialog::localeChanged, this, &NifSkope::sltLocaleChanged);
 
     connect(qApp, &QApplication::lastWindowClosed, this, &NifSkope::exitRequested);
+
+    //custom
+    ui->aSplitBlocks->setShortcut(tr("Ctrl+B"));
+    connect(ui->aSplitBlocks, &QAction::triggered, this, &NifSkope::splitBlocks);
 }
 
 void NifSkope::exitRequested()
